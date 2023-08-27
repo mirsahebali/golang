@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .sticky-header {
+        background-color: #333;
+        color: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .sticky-header nav ul {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+      }
+
+      .sticky-header nav li {
+        margin-right: 20px;
+      }
+
+      .sticky-header nav a {
+        text-decoration: none;
+        color: #fff;
+        transition: color 0.3s;
+      }
+
+      .sticky-header nav a:hover {
+        color: #f7b733;
+      }
+    </style>
+    <title>Sticky Header Example</title>
+  </head>
+  <body>
+    <header class="sticky-header">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- Your page content goes here -->
+    </main>
+    <script>
+      // Add a scroll event listener to toggle the sticky class on the header
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector(".sticky-header");
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > 50) {
+          header.classList.add("sticky");
+        } else {
+          header.classList.remove("sticky");
+        }
+      });
+    </script>
+  </body>
+</html>
